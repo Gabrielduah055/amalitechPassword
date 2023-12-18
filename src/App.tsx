@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+// import './App.css'
 import { generatePassword } from './utils/GeneratePassword'
 import IncludeLowercase from './component/IncludeLowercase/IncludeLowercase'
 import IncludeNumbers from './component/IncludeNumbers/IncludeNumbers'
@@ -8,6 +8,7 @@ import IncludeUppercase from './component/IncludeUppercase/IncludeUppercase'
 import Password from './component/Password/Password'
 import Range from './component/Range/Range'
 import Strength from './component/Strength/Strength'
+import styled from 'styled-components'
 
 function App() {
   const [password, setPassword] = useState<String | null>(null)
@@ -33,8 +34,8 @@ function App() {
     
   }
   return (
-    <div className='container'>
-      <h3>password generator</h3>
+    <Container>
+      <Heading>password generator</Heading>
       <Password password ={password}/>
 
       <div className="generate-container">
@@ -57,15 +58,57 @@ function App() {
           <Strength 
             passwordLength={passwordLength}/>
         
-        <div className='buttonContainer'>
-          <button onClick={HandleGeneratePassword} className='generate'>
-              <span>generate</span>
+        <Wrapper>
+          <Button onClick={HandleGeneratePassword} className='generate'>
+              <Generate>generate</Generate>
               <i className="uil uil-arrow-right"></i>
-          </button>
-        </div>
+          </Button>
+        </Wrapper>
       </div>
-    </div>
+    </Container>
   )
 }
 
 export default App
+
+
+
+const Container = styled.div `
+  width: 400px;
+`
+
+const Heading = styled.h3 `
+    color: var(--color-placeholder);
+    text-transform: capitalize;
+    text-align: center;
+`
+
+const Wrapper = styled.div `
+  width: 100%;
+  margin-block-start: 1rem;
+`
+
+const Button = styled.button `
+display:flex;
+align-items: center;
+gap: 2rem;
+justify-content: center;
+width: 100%;
+text-transform: uppercase;
+font-weight: 500;
+background-color: var(--primary-color);
+outline: none;
+border: none;
+padding: .8rem 1.2rem;
+cursor: pointer;
+
+&:hover {
+  background-color: var(--color-dark);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+`
+
+const Generate = styled.span `
+  font-weight: 600;
+`
