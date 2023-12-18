@@ -1,5 +1,4 @@
 import { ChangeEvent } from 'react'
-import './includeNumbers.css'
 import styled from 'styled-components'
 
 type NumbersProps = {

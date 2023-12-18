@@ -1,5 +1,4 @@
 import { ChangeEvent } from 'react'
-import './range.css'
 import styled from 'styled-components'
 
 type PasswordLengthProps = {

@@ -1,5 +1,4 @@
 import { ChangeEvent } from 'react'
-import './includeSymbols.css'
 import styled from 'styled-components'
 
 

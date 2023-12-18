@@ -1,5 +1,4 @@
 import { ChangeEvent } from 'react'
-import './includeUppercase.css'
 import styled from 'styled-components'
 
 

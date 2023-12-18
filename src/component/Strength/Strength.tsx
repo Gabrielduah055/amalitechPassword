@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './strenth.css'
 import styled from 'styled-components'
 
 type StrenthProps = {
