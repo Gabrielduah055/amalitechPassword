@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './strenth.css'
+import styled from 'styled-components'
 
 type StrenthProps = {
     passwordLength:number
@@ -24,19 +25,6 @@ const Strength = ({passwordLength}:StrenthProps) => {
     }
    }, [passwordLength])
 
-
-   //function to set bar colors based on strength
-//    const getBarsColors = () => {
-//     if(strenth === 'Too Weak!'){
-//         return ['#F64A4A', 'transparent', 'transparent', 'transparent']
-//     }else if(strenth === 'Weak') {
-//         return['#FB7C58','#FB7C58','transparent','transparent']
-//     }else if(strenth === 'Medium'){
-//         return ['#F8CD65','#F8CD65','#F8CD65', 'transparent']
-//     }else {
-//         return ['#A4FFAF','#A4FFAF','#A4FFAF', '#A4FFAF']
-//     }
-//    }
 
 
 const getBarsColors = () => {
@@ -76,25 +64,61 @@ const getBarsColors = () => {
    
 
   return (
-    <div className='strengthContainer'>
-        <span>STRENGTH</span>
-        <div className="strengthBars">
-            <p className='levelText'>{strenth}</p>
-            <div className="barStates">
+    <StrengthContainer>
+        <StrenghtSpan>STRENGTH</StrenghtSpan>
+        <StrenthBars>
+            <StrengthText className='levelText'>{strenth}</StrengthText>
+            <StrengthState>
                 {barColors.map((color,index) => (
-                    <div key={index} 
+                    <Bars key={index} 
                     className={`bars bar${index +1}`} 
                     style={{
                         backgroundColor:color.backgroundColor,
                         border:`2px solid ${color.borderColor}`
                         
-                    }}></div>
+                    }}></Bars>
                 ))}
                 
-            </div>
-        </div>
-    </div>
+            </StrengthState>
+        </StrenthBars>
+    </StrengthContainer>
   )
 }
 
 export default Strength
+
+
+const StrengthContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 2rem;
+  background-color: var(--color-dark);
+  padding: 1rem;
+`
+const StrenghtSpan = styled.span`
+  color: var(--color-placeholder);
+  font-size: .8rem;
+  font-weight: 600;
+`
+const StrenthBars = styled.div`
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+`
+const StrengthText = styled.p`
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-password);
+`
+const StrengthState = styled.div`
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+`
+
+const Bars = styled.div`
+  width: 8px;
+  height: 25px;
+  border: 2px solid white;
+`
