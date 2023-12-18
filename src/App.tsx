@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import './App.css'
 import { generatePassword } from './utils/GeneratePassword'
 import IncludeLowercase from './component/IncludeLowercase/IncludeLowercase'
 import IncludeNumbers from './component/IncludeNumbers/IncludeNumbers'
@@ -38,7 +37,7 @@ function App() {
       <Heading>password generator</Heading>
       <Password password ={password}/>
 
-      <div className="generate-container">
+      <GenerateContainer>
         <Range
           passwordLength={passwordLength} 
           setPasswordLength= {setPasswordLength}
@@ -61,10 +60,10 @@ function App() {
         <Wrapper>
           <Button onClick={HandleGeneratePassword} className='generate'>
               <Generate>generate</Generate>
-              <i className="uil uil-arrow-right"></i>
+              <Icon className="uil uil-arrow-right"></Icon>
           </Button>
         </Wrapper>
-      </div>
+      </GenerateContainer>
     </Container>
   )
 }
@@ -75,6 +74,13 @@ export default App
 
 const Container = styled.div `
   width: 400px;
+
+  @media (max-width:375px) {
+    padding:1.8rem
+  }
+  @media (max-width:700px) {
+    padding:2rem
+  }
 `
 
 const Heading = styled.h3 `
@@ -111,4 +117,13 @@ cursor: pointer;
 
 const Generate = styled.span `
   font-weight: 600;
+`
+
+const GenerateContainer = styled.div`
+  background-color: var(--color-background);
+  padding: 1rem 1.5rem;
+`
+
+const Icon = styled.i `
+font-size: 1rem;
 `

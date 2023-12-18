@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react'
 import './includeSymbols.css'
+import styled from 'styled-components'
 
 
 type SymbolsProps = {
@@ -14,16 +15,56 @@ const IncludeSymbols = ({includeSymbols, setIncludeSymbols}:SymbolsProps) => {
 
   }
   return (
-    <div>
-        <div className='upperCaseContainer'>
+    <Container>
+        <SymbolContainer>
           <input type="checkbox" 
                   id='includeSymbols'
                   checked = {includeSymbols}
                   onChange={checkedSymbolHandled}/>
-          <label htmlFor="">Include Symbols</label>
-        </div>
-    </div>
+          <Label htmlFor="">Include Symbols</Label>
+        </SymbolContainer>
+    </Container>
   )
 }
 
 export default IncludeSymbols
+
+
+const Container = styled.div`
+  margin-block:.5rem;
+`
+const SymbolContainer = styled.div`
+  display: flex;
+  gap: .5rem;
+  margin-block: .6rem
+
+  input {
+    outline: none;
+    border: none;
+    background-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-dark);
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+  }
+
+  input[type='checkbox']:checked {
+    background-color: var(--primary-color);
+    background-image: url('/src/assets/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+`
+
+
+
+const Label = styled.label`
+  color: var(--color-password);
+`
