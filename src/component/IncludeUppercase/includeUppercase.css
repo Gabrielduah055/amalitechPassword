@@ -1,0 +1,34 @@
+.upperCaseContainer {
+    display: flex;
+    gap: .5rem;
+    margin-block: .6rem
+}
+
+.upperCaseContainer input {
+    outline: none;
+    border: none;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.upperCaseContainer input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-dark);
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+}
+
+.upperCaseContainer input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    background-image:url('/src/assets/icon-check.svg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+.upperCaseContainer label {
+    color: var(--color-password);
+}
+

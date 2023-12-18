@@ -1,0 +1,40 @@
+.strengthContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 2rem;
+    background-color: var(--color-dark);
+    padding: 1rem;
+}
+
+.strengthContainer span {
+    color: var(--color-placeholder);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.strengthBars p{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-password);
+}
+
+.strengthBars {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.barStates {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.bars {
+    width: 8px;
+    height: 25px;
+    border: 2px solid white;
+}
+
+
