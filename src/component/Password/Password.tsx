@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import './password.css'
 
 interface PasswordProps {

@@ -1,5 +1,5 @@
 
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import './includeLowercase.css'
 
 
@@ -10,7 +10,7 @@ type LowerCaseProps = {
 }
 
 const IncludeLowercase = ({includeLowercase, setIncludeLowercase}:LowerCaseProps) => {
-  const checkedHandledLowercase =(event:ChangeEvent<HTMLInputElement>) =>{
+  const checkedHandledLowercase =(_event:ChangeEvent<HTMLInputElement>) =>{
     setIncludeLowercase(!includeLowercase)
   }
 

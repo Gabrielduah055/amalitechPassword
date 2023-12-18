@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import './includeSymbols.css'
 
 
@@ -9,7 +9,7 @@ type SymbolsProps = {
 
 const IncludeSymbols = ({includeSymbols, setIncludeSymbols}:SymbolsProps) => {
 
-  const checkedSymbolHandled= (event:ChangeEvent<HTMLElement>) => {
+  const checkedSymbolHandled= (_event :ChangeEvent<HTMLElement>) => {
     setIncludeSymbols(!includeSymbols)
 
   }

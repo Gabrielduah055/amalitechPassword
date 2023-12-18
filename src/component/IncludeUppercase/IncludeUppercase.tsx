@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import './includeUppercase.css'
 
 
@@ -12,7 +12,7 @@ type UpperCaseProps = {
 
 const IncludeUppercase = ({includeUppercase, setIncludeUppercase}:UpperCaseProps) => {
 
-  const checkedHandledUppercase =(event:ChangeEvent<HTMLInputElement>) => {
+  const checkedHandledUppercase =(_event:ChangeEvent<HTMLInputElement>) => {
     setIncludeUppercase(!includeUppercase)
   }
 

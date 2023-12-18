@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react'
 import './includeNumbers.css'
 
 type NumbersProps = {
@@ -9,7 +9,7 @@ type NumbersProps = {
 
 const IncludeNumbers = ({includeNumbers, setIncludeNumbers}:NumbersProps) => {
  
-  const checkedHandledNumbers=(event:ChangeEvent<HTMLElement>) => {
+  const checkedHandledNumbers=(_event:ChangeEvent<HTMLElement>) => {
     setIncludeNumbers(!includeNumbers)
   }
 
