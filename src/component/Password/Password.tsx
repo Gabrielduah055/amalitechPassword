@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useState } from 'react'
 
 
 interface PasswordProps {
@@ -10,12 +11,14 @@ interface PasswordProps {
 
 const Password = ({password}:PasswordProps) => {
   const preDefine = 'gabbyDuah055$'
+  const [isCopied, setIsCopied] = useState(false)
 
   const copyToClipboard =() => {
     const content = (password || preDefine ).toString();
     navigator.clipboard.writeText(content)
     .then(() => {
-      alert( content)
+      setIsCopied(true);
+      
     })
     .catch  ((error) => {
       alert( error)
@@ -27,7 +30,13 @@ const Password = ({password}:PasswordProps) => {
         <PasswordGenerate>
           <PasswordText
             style={{color:password ? '#E6E5EA' : '#817D92'}}>{password ? password : preDefine}</PasswordText>
-          <Icon className="uil uil-copy" onClick={copyToClipboard}></Icon>
+            <Copied>
+              <Copy style={{visibility:isCopied ? 'visible' : 'hidden'}}>
+                Copied
+              </Copy>
+              <Icon className="uil uil-copy" onClick={copyToClipboard}></Icon>
+            </Copied>
+          
         </PasswordGenerate>
     </Container>
   )
@@ -60,4 +69,17 @@ const Icon = styled.i`
   &:hover {
     color: var(--color-password);
   }
+`
+
+const Copied = styled.div`
+  display:flex;
+  align-items:center;
+  gap:.5rem
+`
+const Copy = styled.p`
+  color:var(--color-password);
+  font-wieght:600;
+  font-size:.8rem;
+  visibility:hidden;
+  color:var(--primary-color)
 `

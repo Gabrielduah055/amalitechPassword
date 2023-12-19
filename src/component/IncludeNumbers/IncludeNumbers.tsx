@@ -20,13 +20,14 @@ const IncludeNumbers = ({includeNumbers, setIncludeNumbers}:NumbersProps) => {
                 id='includeNumbers'
                 checked = {includeNumbers}
                 onChange = {checkedHandledNumbers}/>
-        <Label htmlFor="">Include Numbers</Label>
+        <Label htmlFor="HTML">Include Numbers</Label>
       </NumbersContainer>
     </Container>
   )
 }
 
 export default IncludeNumbers
+
 
 
 const Container = styled.div`
