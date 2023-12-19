@@ -51,7 +51,7 @@ const SymbolContainer = styled.div`
     height: 20px;
     background-color: var(--color-dark);
     cursor: pointer;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--color-password);
   }
 
   input[type='checkbox']:checked {
@@ -59,6 +59,7 @@ const SymbolContainer = styled.div`
     background-image: url('/src/assets/icon-check.svg');
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid var(--primary-color);
   }
 `
 
