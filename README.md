@@ -72,8 +72,8 @@ A simple and secure Password Generator built with React, Typescript and Styled-c
 
 ## Author
 
-- Website - [Gabriel Duah]
-- Twitter - [@gabrielduah]
-=======
+- Website - [Gabriel Duah]()
+- Twitter - [@gabrielduah](https://www.twitter.com/gabrielduah8)
+
 - A simple and secure Password Generator built with React, Typescript and Styled-components, allowing users to create random passwords with custom options.
 
