@@ -1,30 +1,75 @@
-# React + TypeScript + Vite
+# PASSWORD GENERATOR APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of contents
 
-## Expanding the ESLint configuration
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Overview
+A simple and secure Password Generator built with React, Typescript and Styled-components, allowing users to create random passwords with custom options.
 
-- Configure the top-level `parserOptions` property like this:
+### The challenges
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Generate a password based on the selected inclusion options
+- Copy the generated password to the computer's clipboard
+- See a strength rating for their generated password
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Screenshot
+
+![](/Screenshot%202023-12-21%20110320.png)
+![](/Screenshot%202023-12-21%20110301.png)
+![](/Screenshot%202023-12-21%20110337.png)
+![](/Screenshot%202023-12-21%20110358.png)
+![](/Screenshot%202023-12-21%20110438.png)
+![](/Screenshot%202023-12-21%20110504.png)
+![](/Screenshot%202023-12-21%20110521.png)
+
+### Links
+
+- Solution URL: [Add solution URL here](https://github.com/Gabrielduah055/amalitechPassword)
+- Live Site URL: [Add live site URL here](https://luminous-blancmange-58058c.netlify.app)
+
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
+- Typscript
+
+
+### Continued development
+
+- Enhance password strength analysis for better user guidance
+- Option to save and manage favorite password
+
+
+### Useful resources
+- [Youtube tutorial](https://www.youtube.com/watch?v=G-2mnjv0des&t=928s&pp=ygUjcGFzc3dvcmQgZ2VuZXJhdG9yIHVzaW5nIHR5cGVzY3JpcHQ%3D) - This helped me the overview of the project and how to structure my folders
+-[Typescript Documentation](https://www.typescriptlang.org/docs/) - This is the typescript documentation which helped me understand typscript
+-[Typescript bootcamp](https://angular-university.io/course/typescript-bootcamp)
+
+
+## Author
+
+- Website - [Gabriel Duah]
+- Twitter - [@gabrielduah]
