@@ -20,3 +20,26 @@
 ## FUTURE ENHANCEMENT
 + Enhance password strength analysis for better user guidance
 + Option to save and manage favorite password
+
+## DEMO
+https://luminous-blancmange-58058c.netlify.app/
+
+## INSTALLATION
+  To run this app locally, follow these steps:
+  + clone the respository
+  + install independencies
+  + start the app
+
+
+## USAGE
++ Once the app is running, open it in your browser and customize the password options using the form ticks.
++ Click the "Generate password" button to create a password based on your selection.
++ Click the "copy" icon to copy the generated password to clipboard
+
+## CONTRIBUTING
+ Contributions are welcome. To contribute to this project:
+ + Fork the repository
+ + create a new branch
+ + make your changes and commit them
+ + push to the brance
+ + create a pull request
