@@ -1,28 +1,95 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
+
 type StrenthProps = {
-    passwordLength:number
+    passwordLength:number;
+    includeUppercase:boolean;
+    includeLowercase:boolean;
+    includeNumbers:boolean;
+    includeSymbols:boolean;
 }
 
 
 
-const Strength = ({passwordLength}:StrenthProps) => {
+const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymbols, includeUppercase}:StrenthProps) => {
  
-   const [strenth, setStrenght] = useState<string>('Midium')
+   const [strenth, setStrenght] = useState<string>('Very Weak')
 
 
    useEffect(() => {
-    if(passwordLength < 3){
-        setStrenght('Too Weak!');
-    }else if(passwordLength <5 && passwordLength >=3){
-        setStrenght('Weak');
-    }else if(passwordLength <8 && passwordLength>=5) {
-        setStrenght('Medium')
-    } else {
+
+    
+
+    if(passwordLength >= 8 && passwordLength <= 10) {
+      const checkBoxes = [includeLowercase, includeNumbers, includeSymbols, includeUppercase];
+      const checkCount = checkBoxes.filter((checkbox) => checkbox).length;
+
+
+      if(checkCount === 4){
         setStrenght('Strong')
+      } else if( checkCount === 3) {
+        setStrenght('Medium')
+      } else if (checkCount === 2) {
+        setStrenght('Weak')
+      } else if (checkCount === 1) {
+        setStrenght('Too Weak!')
+      } else {
+        setStrenght('')
+      }
     }
-   }, [passwordLength])
+
+    else if (passwordLength >= 5 && passwordLength < 8 ) {
+      const checkBoxes = [includeLowercase, includeNumbers, includeSymbols, includeUppercase];
+      const checkCount = checkBoxes.filter((checkbox) => checkbox).length;
+
+      if(checkCount === 4){
+        setStrenght('Medium')
+      } else if( checkCount === 3) {
+        setStrenght('Medium')
+      } else if (checkCount === 2) {
+        setStrenght('Weak')
+      } else if (checkCount === 1) {
+        setStrenght('Too Weak!')
+      } else {
+        setStrenght('')
+      }
+    }
+
+    else if (passwordLength >= 3 && passwordLength < 5 ) {
+      const checkBoxes = [includeLowercase, includeNumbers, includeSymbols, includeUppercase];
+      const checkCount = checkBoxes.filter((checkbox) => checkbox).length;
+
+      if(checkCount === 4){
+        setStrenght('Weak')
+      } else if( checkCount === 3) {
+        setStrenght('Weak')
+      } else if (checkCount === 2) {
+        setStrenght('Weak')
+      } else if (checkCount === 1) {
+        setStrenght('Too Weak!')
+      } else {
+        setStrenght('')
+      }
+    }
+
+    else if (passwordLength < 3 ) {
+      const checkBoxes = [includeLowercase, includeNumbers, includeSymbols, includeUppercase];
+      const checkCount = checkBoxes.filter((checkbox) => checkbox).length;
+
+      if(checkCount === 4){
+        setStrenght('Too Weak!')
+      } else if( checkCount === 3) {
+        setStrenght('Too Weak!')
+      } else if (checkCount === 2) {
+        setStrenght('Too Weak!')
+      } else if (checkCount === 1) {
+        setStrenght('Too Weak!')
+      } else {
+        setStrenght('')
+      }
+    }
+   }, [passwordLength, includeLowercase, includeNumbers, includeSymbols, includeUppercase])
 
 
 
@@ -48,14 +115,22 @@ const getBarsColors = () => {
         { backgroundColor: '#F8CD65', borderColor: '#F8CD65' },
         { backgroundColor: 'transparent', borderColor: 'white' }
       ];
-    } else {
+    } else if (strenth === 'Strong'){
       return [
         { backgroundColor: '#A4FFAF', borderColor: '#A4FFAF' },
         { backgroundColor: '#A4FFAF', borderColor: '#A4FFAF' },
         { backgroundColor: '#A4FFAF', borderColor: '#A4FFAF' },
         { backgroundColor: '#A4FFAF', borderColor: '#A4FFAF' }
       ];
+    } else {
+      return [
+        { backgroundColor: 'transparent', borderColor: 'white' },
+        { backgroundColor: 'transparent', borderColor: 'white' },
+        { backgroundColor: 'transparent', borderColor: 'white' },
+        { backgroundColor: 'transparent', borderColor: 'white'}
+      ]
     }
+
   };
   
    const barColors = getBarsColors();
@@ -64,6 +139,7 @@ const getBarsColors = () => {
 
   return (
     <StrengthContainer>
+     
         <StrenghtSpan>STRENGTH</StrenghtSpan>
         <StrenthBars>
             <StrengthText className='levelText'>{strenth}</StrengthText>

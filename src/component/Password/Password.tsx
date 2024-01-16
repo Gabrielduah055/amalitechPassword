@@ -10,7 +10,7 @@ interface PasswordProps {
 
 
 const Password = ({password}:PasswordProps) => {
-  const preDefine = 'gabbyDuah055$'
+  const preDefine = 'P4$5W0rD!'
   const [isCopied, setIsCopied] = useState(false)
 
   const copyToClipboard =() => {

@@ -55,7 +55,12 @@ function App() {
           includeSymbols = {includeSymbols}
           setIncludeSymbols = {setIncludeSymbols}/>
           <Strength 
-            passwordLength={passwordLength}/>
+            passwordLength={passwordLength}
+            includeLowercase={includeLowercase}
+            includeUppercase= {includeUppercase}
+            includeSymbols={includeSymbols}
+            includeNumbers={includeNumbers}
+                            />
         
         <Wrapper>
           <Button onClick={HandleGeneratePassword} className='generate'>
@@ -111,12 +116,12 @@ cursor: pointer;
 &:hover {
   background-color: var(--color-dark);
   color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 `
 
 const Generate = styled.span `
-  font-weight: 600;
+  font-weight: 500;
 `
 
 const GenerateContainer = styled.div`
