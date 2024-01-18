@@ -73,7 +73,7 @@ const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymb
       }
     }
 
-    else if (passwordLength < 3 ) {
+    else if (passwordLength < 3 && passwordLength >= 1) {
       const checkBoxes = [includeLowercase, includeNumbers, includeSymbols, includeUppercase];
       const checkCount = checkBoxes.filter((checkbox) => checkbox).length;
 
@@ -88,6 +88,23 @@ const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymb
       } else {
         setStrenght('Too Weak!')
       }
+    }
+    else if (passwordLength == 0) {
+      const checkBoxes = [includeLowercase, includeNumbers, includeSymbols, includeUppercase];
+      const checkCount = checkBoxes.filter((checkbox) => checkbox).length;
+
+      if(checkCount === 4){
+        setStrenght('')
+      } else if( checkCount === 3) {
+        setStrenght('')
+      } else if (checkCount === 2) {
+        setStrenght('')
+      } else if (checkCount === 1) {
+        setStrenght('')
+      } else {
+        setStrenght('')
+      }
+
     }
    }, [passwordLength, includeLowercase, includeNumbers, includeSymbols, includeUppercase])
 
@@ -182,8 +199,8 @@ const StrenthBars = styled.div`
   gap: .5rem;
 `
 const StrengthText = styled.p`
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: var(--color-password);
 `
 const StrengthState = styled.div`
@@ -195,5 +212,5 @@ const StrengthState = styled.div`
 const Bars = styled.div`
   width: 8px;
   height: 25px;
-  border: 2px solid white;
+  border: 1px solid white;
 `
