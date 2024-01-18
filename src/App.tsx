@@ -84,7 +84,7 @@ const Container = styled.div `
     padding:1.8rem
   }
   @media (max-width:700px) {
-    padding:2rem
+    padding:2.5rem
   }
 `
 
@@ -96,7 +96,7 @@ const Heading = styled.h3 `
 
 const Wrapper = styled.div `
   width: 100%;
-  margin-block-start: 1rem;
+  margin-block: 1rem;
 `
 
 const Button = styled.button `
@@ -109,14 +109,15 @@ text-transform: uppercase;
 font-weight: 500;
 background-color: var(--primary-color);
 outline: none;
-border: none;
+border: 2px solid transparent;
 padding: .8rem 1.2rem;
 cursor: pointer;
+transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 
 &:hover {
   background-color: var(--color-dark);
   color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  border-color: var(--primary-color);
 }
 `
 

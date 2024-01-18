@@ -35,7 +35,7 @@ const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymb
       } else if (checkCount === 1) {
         setStrenght('Too Weak!')
       } else {
-        setStrenght('')
+        setStrenght('Too Weak!')
       }
     }
 
@@ -52,7 +52,7 @@ const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymb
       } else if (checkCount === 1) {
         setStrenght('Too Weak!')
       } else {
-        setStrenght('')
+        setStrenght('Too Weak!')
       }
     }
 
@@ -69,7 +69,7 @@ const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymb
       } else if (checkCount === 1) {
         setStrenght('Too Weak!')
       } else {
-        setStrenght('')
+        setStrenght('Too Weak!')
       }
     }
 
@@ -86,7 +86,7 @@ const Strength = ({passwordLength, includeLowercase, includeNumbers, includeSymb
       } else if (checkCount === 1) {
         setStrenght('Too Weak!')
       } else {
-        setStrenght('')
+        setStrenght('Too Weak!')
       }
     }
    }, [passwordLength, includeLowercase, includeNumbers, includeSymbols, includeUppercase])
