@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 interface PasswordProps {
-  password:String | null
+  password:string | null
 }
 
 
@@ -18,6 +18,9 @@ const Password = ({password}:PasswordProps) => {
     navigator.clipboard.writeText(content)
     .then(() => {
       setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 500)
       
     })
     .catch  ((error) => {

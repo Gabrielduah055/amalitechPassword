@@ -10,7 +10,7 @@ import Strength from './component/Strength/Strength'
 import styled from 'styled-components'
 
 function App() {
-  const [password, setPassword] = useState<String | null>(null)
+  const [password, setPassword] = useState<string | null>(null)
   const [passwordLength, setPasswordLength] = useState<number>(3) 
   const [includeLowercase, setIncludeLowercase] = useState<boolean>(true)
   const [includeUppercase, setIncludeUppercase] = useState<boolean>(true)
